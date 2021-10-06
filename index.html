@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Generador de consecutivos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <form id="form1" runat="server">
+        Sistema de comparación facial.<br />
+        <br />
+        <br />
+        Seleccionar imagen 1:<br />
+        <asp:FileUpload ID="FileUpload1" runat="server" />
+        <br />
+        <br />
+        Seleccionar imagen 2:<br />
+        <asp:FileUpload ID="FileUpload2" runat="server" />
 
+        <br />
+        <br />
+
+        Imagen 1:<br />
+        <asp:Image ID="Image1" runat="server" Height="130px" Width="187px" />
+        <br />
+        <br />
+        <br />Imagen 2:<br />
+        
+            <asp:Image ID="Image2" runat="server" Height="133px" Width="185px" />
+        <p></p>
+        <p>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cargar y Analizar" />
+        </p>
+        Resultado:
+        <asp:Label ID="lbl_resultado" runat="server" Text="-"></asp:Label>
+    </form>
+    <p>
+        &nbsp;</p>
+    <p>
+        **DATOS DEL ANáLISIS**</p>
+    <p>
+        Modelo: VGG , Métrica de distancia: Coseno</p>
+    <p>
+        &nbsp;</p>
+
+
+    <div class="view">
+		<form role="form" class="">
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Email address</label>
+		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password</label>
+		    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputFile">File input</label>
+		    <input type="file" class="form-control-file" id="exampleInputFile">
+		    <p class="help-block">Example block-level help text here.</p>
+		  </div>
+		  <div class="checkbox">
+		    <label>
+		      <input type="checkbox"> Check me out
+		    </label>
+		  </div>
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
