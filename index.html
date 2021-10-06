@@ -6,46 +6,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    <form id="form1" runat="server">
-        Sistema de comparación facial.<br />
-        <br />
-        <br />
-        Seleccionar imagen 1:<br />
-        <asp:FileUpload ID="FileUpload1" runat="server" />
-        <br />
-        <br />
-        Seleccionar imagen 2:<br />
-        <asp:FileUpload ID="FileUpload2" runat="server" />
-
-        <br />
-        <br />
-
-        Imagen 1:<br />
-        <asp:Image ID="Image1" runat="server" Height="130px" Width="187px" />
-        <br />
-        <br />
-        <br />Imagen 2:<br />
-        
-            <asp:Image ID="Image2" runat="server" Height="133px" Width="185px" />
-        <p></p>
-        <p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cargar y Analizar" />
-        </p>
-        Resultado:
-        <asp:Label ID="lbl_resultado" runat="server" Text="-"></asp:Label>
-    </form>
-    <p>
-        &nbsp;</p>
-    <p>
-        **DATOS DEL ANáLISIS**</p>
-    <p>
-        Modelo: VGG , Métrica de distancia: Coseno</p>
-    <p>
-        &nbsp;</p>
-
-
-    <div class="view">
-		<form role="form" class="">
+    <div class="lyrow ui-draggable" style="">
+	<a href="#close" class="remove badge badge-danger"><svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></svg><!-- <i class="fas fa-times"></i> --> remove</a>
+	<span class="drag badge badge-default ui-draggable-handle ui-sortable-handle"><svg class="svg-inline--fa fa-arrows-alt fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="arrows-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z"></path></svg><!-- <i class="fas fa-arrows-alt"></i> --> drag</span>
+	<div class="preview"><input type="text" value="4 4 4" placeholder="Enter your own" class="form-control"></div>
+	<div class="view">
+		<div class="row">
+						<div class="col-md-4 column ui-sortable"><div class="box box-element ui-draggable" style="position: relative; opacity: 1; left: 0px; top: 0px;">
+  	<a href="#close" class="remove badge badge-danger"><svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></svg><!-- <i class="fas fa-times"></i> --> remove</a>
+	<span class="drag badge badge-default ui-draggable-handle ui-sortable-handle"><svg class="svg-inline--fa fa-arrows-alt fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="arrows-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z"></path></svg><!-- <i class="fas fa-arrows-alt"></i> --> drag</span>
+	<span class="configuration">
+		<a class="btn btn-sm btn-secondary" href="#" rel="form-inline">Inline</a>
+	</span>
+	<div class="preview">Form</div>
+	<div class="view">
+		<form role="form">
 		  <div class="form-group">
 		    <label for="exampleInputEmail1">Email address</label>
 		    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
@@ -67,6 +42,84 @@
 		  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 	</div>
+</div></div>
+						<div class="col-md-4 column ui-sortable"><div class="lyrow" style="position: relative; opacity: 1; left: 0px; top: 0px;">
+		<a href="#close" class="remove badge badge-danger"><svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></svg><!-- <i class="fas fa-times"></i> --> remove</a>
+	<span class="drag badge badge-default ui-sortable-handle"><svg class="svg-inline--fa fa-arrows-alt fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="arrows-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z"></path></svg><!-- <i class="fas fa-arrows-alt"></i> --> drag</span>
+  <div class="preview">9 3</div>
+	<div class="view">
+		<div class="row">
+			<div class="col-md-12 column ui-sortable">
+				
+			<div class="box box-element ui-draggable" style="">
+		<a href="#close" class="remove badge badge-danger"><svg class="svg-inline--fa fa-times fa-w-12" aria-hidden="true" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M323.1 441l53.9-53.9c9.4-9.4 9.4-24.5 0-33.9L279.8 256l97.2-97.2c9.4-9.4 9.4-24.5 0-33.9L323.1 71c-9.4-9.4-24.5-9.4-33.9 0L192 168.2 94.8 71c-9.4-9.4-24.5-9.4-33.9 0L7 124.9c-9.4 9.4-9.4 24.5 0 33.9l97.2 97.2L7 353.2c-9.4 9.4-9.4 24.5 0 33.9L60.9 441c9.4 9.4 24.5 9.4 33.9 0l97.2-97.2 97.2 97.2c9.3 9.3 24.5 9.3 33.9 0z"></path></svg><!-- <i class="fas fa-times"></i> --> remove</a>
+	<span class="drag badge badge-default ui-draggable-handle ui-sortable-handle"><svg class="svg-inline--fa fa-arrows-alt fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="arrows-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M352.201 425.775l-79.196 79.196c-9.373 9.373-24.568 9.373-33.941 0l-79.196-79.196c-15.119-15.119-4.411-40.971 16.971-40.97h51.162L228 284H127.196v51.162c0 21.382-25.851 32.09-40.971 16.971L7.029 272.937c-9.373-9.373-9.373-24.569 0-33.941L86.225 159.8c15.119-15.119 40.971-4.411 40.971 16.971V228H228V127.196h-51.23c-21.382 0-32.09-25.851-16.971-40.971l79.196-79.196c9.373-9.373 24.568-9.373 33.941 0l79.196 79.196c15.119 15.119 4.411 40.971-16.971 40.971h-51.162V228h100.804v-51.162c0-21.382 25.851-32.09 40.97-16.971l79.196 79.196c9.373 9.373 9.373 24.569 0 33.941L425.773 352.2c-15.119 15.119-40.971 4.411-40.97-16.971V284H284v100.804h51.23c21.382 0 32.09 25.851 16.971 40.971z"></path></svg><!-- <i class="fas fa-arrows-alt"></i> --> drag</span>
+	<span class="configuration">
+		<span class="btn-group btn-group-sm">
+	<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">Style <span class="caret"></span></a>
+	<div class="dropdown-menu">
+				<a href="#" class="dropdown-item" rel="">Default</a>
+				<a href="#" class="dropdown-item" rel="table-striped">Striped</a>
+				<a href="#" class="dropdown-item" rel="table-bordered">Bordered</a>
+			</div>
+</span>
+		<a class="btn btn-sm btn-default" href="#" rel="table-hover">Hover</a>
+		<a class="btn btn-sm btn-default" href="#" rel="table-sm">Condensed</a>
+	</span>
+	<div class="preview">Table</div>
+	<div class="view">
+		<table class="table" contenteditable="true">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product</th>
+          <th>Payment Taken</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<tr>
+          <td>1</td>
+          <td>TB - Monthly</td>
+          <td>01/04/2012</td>
+          <td>Default</td>
+        </tr>
+        <tr class="table-active">
+          <td>1</td>
+          <td>TB - Monthly</td>
+          <td>01/04/2012</td>
+          <td>Approved</td>
+        </tr>
+        <tr class="table-success">
+          <td>2</td>
+          <td>TB - Monthly</td>
+          <td>02/04/2012</td>
+          <td>Declined</td>
+        </tr>
+        <tr class="table-warning">
+          <td>3</td>
+          <td>TB - Monthly</td>
+          <td>03/04/2012</td>
+          <td>Pending</td>
+        </tr>
+        <tr class="table-danger">
+          <td>4</td>
+          <td>TB - Monthly</td>
+          <td>04/04/2012</td>
+          <td>Call in to confirm</td>
+        </tr>
+      </tbody>
+    </table>
+	</div>
+</div></div>
+		</div>
+	</div>
+</div></div>
+						<div class="col-md-4 column ui-sortable"></div>
+					</div>
+	</div>
+</div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
