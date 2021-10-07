@@ -67,40 +67,43 @@
 <script>
 	function generar()
 	{
+	   var tabla = document.getElementById("tablaresultadosplacas");
+		tabla.innerHTML = "";
+		
 	   var caracteres = document.getElementById('caracteres').value;
            var placaoriginal = document.getElementById('placa').value;
 	   
-	 var contador = 1;
-		//recorrer los caracteres validos
-	  for (var i = 0; i < caracteres.length; i++) 
-	  {
-		 //extraer caracter
-		 var valordinamico = caracteres.charAt(i);
-		  
-		 var nuevaplaca = placaoriginal.replace("*", valordinamico);
-		 
-		  var color = "";
-		  if(contador%2==0)
+	  	var contador = 1;
+		 //recorrer los caracteres validos
+		  for (var i = 0; i < caracteres.length; i++) 
 		  {
-			color = 'table-success'
-		  }
-		  else
-		  {
-			  color = 'table-active'
-		  }
-		  
-		  //generar fila
-		var fila = '<tr><td>'+contador+'</td><td>'+nuevaplaca+'</td></tr>';
+			 //extraer caracter
+			 var valordinamico = caracteres.charAt(i);
 
-		 //agregar a la tabla
-		var nuevafila = document.createElement('TR');
-		nuevafila.classList.add(color);
-		nuevafila.innerHTML = fila;
-		document.getElementById("tablaresultadosplacas").appendChild(nuevafila);
-		contador = contador + 1;
-	 }
-		
-		
+			  //reemplazar caracter
+			 var nuevaplaca = placaoriginal.replace("*", valordinamico);
+
+			  //selecciona el color
+			  var color = "";
+			  if(contador%2==0)
+			  {
+				color = 'table-success'
+			  }
+			  else
+			  {
+				  color = 'table-active'
+			  }
+
+			  //generar fila
+			var fila = '<tr><td>'+contador+'</td><td>'+nuevaplaca+'</td></tr>';
+
+			 //agregar a la tabla
+			var nuevafila = document.createElement('TR');
+			nuevafila.classList.add(color);
+			nuevafila.innerHTML = fila;
+			document.getElementById("tablaresultadosplacas").appendChild(nuevafila);
+			contador = contador + 1;
+		 }
 	}
 	
 	function mensaje()
