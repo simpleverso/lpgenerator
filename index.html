@@ -76,11 +76,27 @@
 	function generar()
 	{
 	   var caracteres = document.getElementById('caracteres').value;
-	   var fila = '<tr><td>nuevo</td><td>nuevo</td></tr>';
-		
-	   var nuevafila = document.createElement("TR");
+           var placaoriginal = document.getElementById('placa').value;
+	   
+	 var contador = 1;
+		//recorrer los caracteres validos
+	  for (var i = 0; i < caracteres.length; i++) 
+	  {
+		 //extraer caracter
+		 var valordinamico = caracteres.charAt(i);
+		  
+		 var nuevaplaca = placaoriginal.replace("*", valordinamico);
+		 
+		  //
+		var fila = '<tr><td>'+contador+'</td><td>'+nuevaplaca+'</td></tr>';
+
+		 //agregar a la tabla
+		var nuevafila = document.createElement("TR");
 		nuevafila.innerHTML = fila;
-	   document.getElementById("tablaresultadosplacas").appendChild(nuevafila);
+		document.getElementById("tablaresultadosplacas").appendChild(nuevafila);
+	 }
+		
+		
 	}
 	
 	function mensaje()
