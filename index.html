@@ -28,7 +28,7 @@
 	            <p class="help-block">Se debe ingresar un * en los digitos a generar.</p>
 	            <br>
 		  </div>
-		  <button type="submit" onClick="mensaje()" class="btn btn-primary">Generar</button>
+		  <button type="submit" onClick="generar()" class="btn btn-primary">Generar</button>
 		</form>
 	</div>
 </div></div>
@@ -45,7 +45,7 @@
 			<br>
 	<div class="view"><br>
 		<div class="preview">Resultados</div>
-<table class="table" contenteditable="true">
+<table class="table" contenteditable="true" id="tablaresultadosplacas">
       <thead>
         <tr>
           <th>#</th>
@@ -73,9 +73,19 @@
 	</div>
 </div>
 <script>
+	function generar()
+	{
+	   var caracteres = document.getElementById('caracteres').value;
+	   var fila = '<tr><td>nuevo</td><td>nuevo</td></tr>';
+		
+	   var nuevafila = document.createElement("TR");
+		nuevafila.innerHTML = fila;
+	   document.getElementById("tablaresultadosplacas").appendChild(nuevafila);
+	}
+	
 	function mensaje()
 	{
-	 	alert('Generar')
+	 	alert('Listo')
 	}
 	
 	var input = document.getElementById('caracteres');
