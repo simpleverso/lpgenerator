@@ -87,13 +87,24 @@
 		  
 		 var nuevaplaca = placaoriginal.replace("*", valordinamico);
 		 
-		  //
-		var fila = '<tr><td>'+contador+'</td><td>'+nuevaplaca+'</td></tr>';
+		  var color = "";
+		  if(contador%2==0)
+		  {
+			color = 'class="table-success"'
+		  }
+		  else
+		  {
+			  color = 'class="table-active"'
+		  }
+		  
+		  //generar fila
+		var fila = '<tr'+color+'><td>'+contador+'</td><td>'+nuevaplaca+'</td></tr>';
 
 		 //agregar a la tabla
 		var nuevafila = document.createElement("TR");
 		nuevafila.innerHTML = fila;
 		document.getElementById("tablaresultadosplacas").appendChild(nuevafila);
+		contador = contador + 1;
 	 }
 		
 		
