@@ -85,10 +85,17 @@
 <script>
 	function mensaje()
 	{
-	 	alert('Hey i am calling')
+	 	alert('Generar')
 	}
+	
 	var input = document.getElementById('caracteres');
 	input.onkeyup = function()
+	{
+		this.value = this.value.toUpperCase();
+	}
+	
+	var input2 = document.getElementById('placa');
+	input2.onkeyup = function()
 	{
 		this.value = this.value.toUpperCase();
 	}
