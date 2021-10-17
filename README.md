@@ -1,4 +1,4 @@
-## Licence plate generator
+## License plate - missing char generator
 ![Image](https://github.com/simpleverso/lpgenerator/blob/main/imgrs.png)
 
 
